@@ -9,8 +9,8 @@
   --pill-bg: #1a2230;
   --pill-fg: #e5e7eb;
   --radius: 9999px;
-  --container: 720px;
-  --reading: 68ch;
+  --container: 960px; /* base max width */
+  --reading: 80ch;   /* wider reading measure */
   --step--2: 0.79rem;
   --step--1: 0.889rem;
   --step-0: 1rem;
@@ -19,6 +19,6 @@
   --step-3: 1.953rem;
   --step-4: 2.441rem;
 }
-@media (min-width: 960px){
-  :root{ --container: 800px; }
+@media (min-width: 1200px){
+  :root{ --container: 1200px; }
 } 
