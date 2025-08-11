@@ -1,13 +1,13 @@
 :root{
-  --bg: #fffdf8;
-  --text: #0b0b0b;
-  --muted: #666666;
-  --border: #e8e5de;
-  --link: #1a73e8;
-  --link-hover: #0b57d0;
-  --accent: #222222;
-  --pill-bg: #f2efe8;
-  --pill-fg: #222222;
+  --bg: #0b0d10;
+  --text: #e5e7eb;
+  --muted: #9aa0a6;
+  --border: #2a2f3a;
+  --link: #8ab4f8;
+  --link-hover: #a6c8ff;
+  --accent: #ffd166;
+  --pill-bg: #1a2230;
+  --pill-fg: #e5e7eb;
   --radius: 9999px;
   --container: 720px;
   --reading: 68ch;
