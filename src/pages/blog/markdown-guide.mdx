@@ -1,0 +1,71 @@
+---
+layout: ../../layouts/Post.astro
+title: "Markdown & Images Guide"
+date: 2025-08-11
+summary: How to use markdown and images in this blog
+topic: Guide
+---
+
+## Text Formatting
+
+You can use **bold**, *italic*, and `inline code`.
+
+## Lists
+
+- Bullet point 1
+- Bullet point 2
+  - Nested item
+  - Another nested item
+
+1. Numbered list
+2. Second item
+3. Third item
+
+## Code Blocks
+
+```python
+def hello_world():
+    print("Hello, World!")
+```
+
+```javascript
+const greeting = "Hello, World!";
+console.log(greeting);
+```
+
+## Images
+
+### Basic image syntax:
+![Alt text](/images/example.jpg)
+
+### With HTML for more control:
+<img src="/images/example.jpg" alt="Description" width="500" style="border-radius: 8px;" />
+
+### Responsive image:
+<img src="/images/example.jpg" alt="Description" style="max-width: 100%; height: auto;" />
+
+## Links
+
+[Link to another post](/blog/first-post/)
+[External link](https://github.com)
+
+## Quotes
+
+> This is a blockquote. It can span multiple lines and will be styled consistently with your theme.
+
+## Tables
+
+| Feature | Supported |
+|---------|-----------|
+| Markdown | ✅ |
+| Images | ✅ |
+| Code highlighting | ✅ |
+| Math | ➕ (can be added) |
+
+## Advanced: JSX Components
+
+Since this is MDX, you can also use JSX:
+
+<div style="background: var(--pill-bg); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+  <strong>Custom component:</strong> This is a custom styled box!
+</div>
