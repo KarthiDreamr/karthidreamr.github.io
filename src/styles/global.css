@@ -10,7 +10,7 @@ main{ display: block }
 a{ color: var(--link) }
 a:hover{ color: var(--link-hover) }
 .container{ max-width: var(--container); margin: 0 auto; padding: 24px; }
-.prose{ max-width: var(--reading); margin-inline: auto; line-height: 1.7; font-size: var(--step-0); }
+.prose{ max-width: var(--container); margin-inline: auto; line-height: 1.7; font-size: var(--step-0); }
 .prose h1{ font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -0.01em; line-height: 1.1; margin: 24px 0; }
 .prose h2{ font-size: clamp(1.4rem, 2.8vw, 1.8rem); margin-top: 2.2em; }
 .prose p{ margin: 1em 0 }
