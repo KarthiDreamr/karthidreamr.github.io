@@ -1,0 +1,27 @@
+---
+const { title = 'AI Red Team Blog', description = 'Security, alignment, and LLM red teaming' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <style is:global>@import '/src/styles/global.css';</style>
+  </head>
+  <body>
+    <header class="container">
+      <nav>
+        <a href="/"><strong>AI Red Team</strong></a> · <a href="/blog/">Blog</a> · <a href="/about/">About</a>
+      </nav>
+    </header>
+    <main class="container">
+      <slot />
+    </main>
+    <footer class="container">
+      <small>© {new Date().getFullYear()} AI Red Team. No trackers.</small>
+    </footer>
+  </body>
+</html> 
