@@ -9,7 +9,8 @@
   --pill-bg: #1a2230;
   --pill-fg: #e5e7eb;
   --radius: 9999px;
-  --container: 960px; /* base max width */
+  /* Use a percentage-based container width, clamped for readability */
+  --container: clamp(320px, 60vw, 900px);
   --reading: 80ch;   /* wider reading measure */
   --step--2: 0.79rem;
   --step--1: 0.889rem;
@@ -20,5 +21,6 @@
   --step-4: 2.441rem;
 }
 @media (min-width: 1200px){
-  :root{ --container: 1200px; }
-} 
+  /* Keep large screens consistent with the narrower intent */
+  :root{ --container: clamp(320px, 50vw, 900px); }
+}
