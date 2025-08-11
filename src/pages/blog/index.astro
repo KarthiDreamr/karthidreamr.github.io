@@ -1,0 +1,50 @@
+---
+const modules = import.meta.glob('./*.mdx', { eager: true });
+const posts = Object.entries(modules)
+  .map(([path, mod]) => {
+    // derive slug from filename
+    const slug = path.replace('./', '').replace('.mdx', '');
+    // @ts-ignore frontmatter exists on compiled MDX modules
+    const fm = mod.frontmatter ?? {};
+    return {
+      ...fm,
+      url: `/blog/${slug}/`,
+    } as {
+      title?: string; date?: string; summary?: string; topic?: string; url: string;
+    };
+  })
+  .sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime());
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog · AI Red Team</title>
+    <meta name="description" content="Posts on red teaming, alignment, and LLM security." />
+    <style is:global>@import '/src/styles/global.css';</style>
+  </head>
+  <body>
+    <header class="container">
+      <nav>
+        <a href="/blog/"><strong>AI Red Team</strong></a>
+      </nav>
+    </header>
+    <main class="container prose">
+      <h1>Blog</h1>
+      <ul style="list-style:none; padding:0; margin:0;">
+        {posts.map((p) => (
+          <li style="margin: 1.2rem 0; padding: 1rem 0; border-top: 1px solid var(--border);">
+            {p.topic && <span class="pill">{p.topic}</span>}
+            <h2 style="margin: 0.3rem 0 0.2rem;"><a href={p.url} style="text-decoration:none">{p.title}</a></h2>
+            {p.date && <small style="color:var(--muted)">{new Date(p.date).toDateString()}</small>}
+            {p.summary && <p style="margin:0.6rem 0 0; color:var(--muted)">{p.summary}</p>}
+          </li>
+        ))}
+      </ul>
+    </main>
+    <footer class="container">
+      <small>© {new Date().getFullYear()} AI Red Team</small>
+    </footer>
+  </body>
+</html> 
